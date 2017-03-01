@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Arduino potentiometer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js" charset="utf-8"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div class="view">
+  <h1 responsive>Potentiomètre : </h1>
+    <h2 id="data"></h2>
+    <button type="button" class="btn btn-success">ON</button>
+    <button type="button" class="btn btn-danger">OFF</button>
+  </div>
+    <script type="text/javascript">
+        window.onload = () => {
+            const div = document.getElementById("data");
+
+            var socket = io('http://localhost:8888');
+            socket.on('data_received', function(data) {
+                  div.innerHTML = data;
+            });
+        }
+    </script>
+</body>
+
+</html>

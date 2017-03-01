@@ -1,0 +1,16 @@
+html,
+body,
+.view {
+    height: 100%;
+}
+
+.view {
+    background: url("http://www.pic4pk.com/wp-content/uploads/2015/06/Minimal-Pattern-Wallpaper.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    color:white;
+    margin:0 auto;
+}
